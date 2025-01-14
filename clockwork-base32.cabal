@@ -1,0 +1,43 @@
+cabal-version:       2.2
+
+name:                clockwork-base32
+version:             0.1.0.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/nao1215/clockwork-base32#readme
+license:             MIT
+license-file:        LICENSE
+author:              Naohiro CHIKAMATSU
+maintainer:          n.chika156@gmail.com
+copyright:           2025 Naohiro CHIKAMATSU
+category:            Web
+build-type:          Simple
+extra-source-files:  README.md
+                     CHANGELOG.md
+
+library
+  exposed-modules:     ClockworkBase32
+  hs-source-dirs:      src
+  build-depends:       base >= 4.7 && < 5,
+                       bytestring,
+                       containers
+  default-language:    Haskell2010
+  ghc-options:         -Wall
+                       -Wcompat
+                       -Widentities
+                       -Wincomplete-record-updates
+                       -Wincomplete-uni-patterns
+                       -Wmissing-export-lists
+                       -Wmissing-home-modules
+                       -Wpartial-fields
+                       -Wredundant-constraints
+
+test-suite clockwork-base32-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base >= 4.7 && < 5,
+                       hspec,
+                       clockwork-base32,
+                       bytestring
+  default-language:    Haskell2010
