@@ -10,7 +10,7 @@ license-file:        LICENSE
 author:              Naohiro CHIKAMATSU
 maintainer:          n.chika156@gmail.com
 copyright:           2025 Naohiro CHIKAMATSU
-category:            Web
+category:            Base32
 build-type:          Simple
 extra-source-files:  README.md
                      CHANGELOG.md
