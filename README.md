@@ -20,7 +20,7 @@ Clockwork Base32 is a simple variant of Base32 inspired by Crockford's Base32. S
 ### Third-party Implementations
 
 - C++: [wx257osn2/clockwork_base32_cxx](https://github.com/wx257osn2/clockwork_base32_cxx)
-- C++: [objectx/cpp-clockwork-base32](https://github.com/mganeko/js_clockwork_base32)
+- C++: [objectx/cpp-clockwork-base32](https://github.com/objectx/cpp-clockwork-base3)
 - JavaScript: [mganeko/js_clockwork_base32](https://github.com/mganeko/js_clockwork_base32)
 - AssemblyScript: [mganeko/as_clockwork_base32](https://github.com/mganeko/as_clockwork_base32)
 - Rust: [woxtu/rust-clockwork-base32](https://github.com/woxtu/rust-clockwork-base32)
