@@ -1,16 +1,16 @@
 cabal-version:       2.2
 
 name:                clockwork-base32
-version:             0.1.0.0
--- synopsis:
--- description:
+version:             0.1.1.0
+synopsis:            A Clockwork Base32 encoding and decoding library
+description:         A library for encoding and decoding data using the Clockwork Base32 encoding scheme.
 homepage:            https://github.com/nao1215/clockwork-base32#readme
 license:             MIT
 license-file:        LICENSE
 author:              Naohiro CHIKAMATSU
 maintainer:          n.chika156@gmail.com
 copyright:           2025 Naohiro CHIKAMATSU
-category:            Base32
+category:            Encoding
 build-type:          Simple
 extra-source-files:  README.md
                      CHANGELOG.md
