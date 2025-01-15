@@ -10,13 +10,13 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  test:
     runs-on: ${{ matrix.os }}
 
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
-        ghc: ["9.8", "9.6"]
+        ghc:  ['9.12', '9.10', '9.8', '9.6', '9.4', '9.2', '9.0']
 
     steps:
       - name: Check out repository
