@@ -76,5 +76,14 @@ main = hspec $ do
     it "returns Right 'Wow, it really works!' when input value is 'AXQQEB10D5T20WK5C5P6RY90EXQQ4TVK44'" $ do
       decode "AXQQEB10D5T20WK5C5P6RY90EXQQ4TVK44" `shouldBe` Right "Wow, it really works!"
 
+    it "also accepts lowercase letters" $ do
+      decode "axqqeb10d5t20wk5c5p6ry90exqq4tvk44" `shouldBe` decode "AXQQEB10D5T20WK5C5P6RY90EXQQ4TVK44"
+
+    it "also accepts o and O instead of 0" $ do
+      decode "ooOO00" `shouldBe` decode "000000"
+
+    it "also accepts i, I, l and L instead of 1" $ do
+      decode "iIlL1111" `shouldBe` decode "11111111"
+
     it "returns Left 'Invalid character: ~' when input value is '~'" $ do
       decode "~" `shouldBe` Left "Invalid character: ~"

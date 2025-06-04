@@ -7,6 +7,7 @@ import           Data.Bits             (shiftL, shiftR, (.&.), (.|.))
 import qualified Data.ByteString       as BS
 import qualified Data.ByteString.Char8 as BSC
 import           Data.Word             (Word8)
+import           Data.Char             (toUpper)
 
 -- clockwork base32 symbols
 base32Symbols :: String
@@ -58,9 +59,12 @@ decode input = case mapM decodeChar input of
   where
     -- convert a Base32 symbol into a value
     decodeChar :: Char -> Either String Word8
-    decodeChar c = case lookup c decodeMap of
+    decodeChar c = case lookup (toUpper c) decodeMap of
       Just val -> Right val
-      Nothing  -> Left ("Invalid character: " ++ [c])
+      Nothing 
+        | c `elem` "oO" -> decodeChar '0'
+        | c `elem` "iIlL" -> decodeChar '1'
+        | otherwise -> Left ("Invalid character: " ++ [c])
 
     -- process the input symbols in chunks of 8 characters
     processChunks :: [Word8] -> [Word8] -> Either String String
