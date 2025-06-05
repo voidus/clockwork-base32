@@ -1,6 +1,7 @@
+{-# LANGUAGE OverloadedStrings #-}
 module Main (main) where
 
-import           ClockworkBase32 (decode, encode)
+import           ClockworkBase32 (decode, decodeString, encode, encodeString)
 import           Test.Hspec
 
 main :: IO ()
@@ -41,6 +42,10 @@ main = hspec $ do
 
     it "returns 'AXQQEB10D5T20WK5C5P6RY90EXQQ4TVK44' when input value is 'Wow, it really works!'" $ do
       encode "Wow, it really works!" `shouldBe` "AXQQEB10D5T20WK5C5P6RY90EXQQ4TVK44"
+
+  describe "encodeString" $ do
+    it "returns 'AXQQEB10D5T20WK5C5P6RY90EXQQ4TVK44' when input value is 'Wow, it really works!'" $ do
+      encodeString "Wow, it really works!" `shouldBe` "AXQQEB10D5T20WK5C5P6RY90EXQQ4TVK44"
 
   describe "decode" $ do
     it "returns Right '' when input value is ''" $ do
@@ -87,3 +92,7 @@ main = hspec $ do
 
     it "returns Left 'Invalid character: ~' when input value is '~'" $ do
       decode "~" `shouldBe` Left "Invalid character: ~"
+
+  describe "decodeString" $ do
+    it "returns Right 'foobar' when input value is 'CSQPYRK1E8'" $ do
+      decodeString "CSQPYRK1E8" `shouldBe` Right "foobar"
